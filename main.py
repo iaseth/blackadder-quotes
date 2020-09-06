@@ -30,7 +30,17 @@ def main():
 		pass
 
 	for quoteObject in quoteObjects:
-		print(quoteObject)
+		#print(quoteObject)
+		pass
+
+	jsonObject = {}
+	jsonObject["quotes"] = {}
+	for quoteObject in quoteObjects:
+		jsonObject["quotes"][quoteObject.Key()] = quoteObject.Quote()
+		pass
+
+	with open("blackadder.json", "w") as f:
+		f.write(str(jsonObject))
 		pass
 	pass
 
