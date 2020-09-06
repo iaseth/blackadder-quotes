@@ -23,7 +23,7 @@ def main():
 	quoteObjects = []
 	for line in content.split("\n"):
 		line_text = line.strip()
-		if len(line_text):
+		if len(line_text) and line_text[0] != "#":
 			quoteObject = BlackAdderQuote(line_text)
 			quoteObjects.append(quoteObject)
 			pass
