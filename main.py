@@ -1,6 +1,9 @@
 
 
 
+text_filename = "blackadder.txt"
+json_filename = "blackadder.json"
+
 class BlackAdderQuote(object):
 	def __init__(self, line):
 		parts = line.strip().split(":")
@@ -17,7 +20,7 @@ class BlackAdderQuote(object):
 		return self.Key()
 
 def main():
-	with open("blackadder.txt") as f:
+	with open(text_filename) as f:
 		content = f.read()
 
 	quoteObjects = []
@@ -39,7 +42,7 @@ def main():
 		jsonObject["quotes"][quoteObject.Key()] = quoteObject.Quote()
 		pass
 
-	with open("blackadder.json", "w") as f:
+	with open(json_filename, "w") as f:
 		f.write(str(jsonObject))
 		pass
 	pass
