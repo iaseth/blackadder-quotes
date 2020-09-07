@@ -1,3 +1,4 @@
+import json
 
 
 
@@ -43,7 +44,7 @@ def main():
 		pass
 
 	with open(json_filename, "w") as f:
-		f.write(str(jsonObject))
+		f.write(json.dumps(jsonObject))
 		pass
 	pass
 
